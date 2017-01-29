@@ -4,37 +4,30 @@ apply plugin: 'java'
 jar {
     manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart',
-                   'Implementation-Version': version
+                   'Implementation-Version': 1.0
     }
 }
 
-task compileTest {
+compileTest {
     doLast {
         println "compiling unit tests for this project"
     }
 }
 
-task compileJava {
+compileJava {
     doLAst {
         println "compiling and building project"
     }
 }
 
-task javadoc {
+javadoc {
     doLast {
         println "creating html documentation for this project"
     }
 }
 
-task clean {
+clean {
     doLast {
         println "removes all files created by this project"
-    }
-}
-
-task jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart',
-                'Implementation-Version': 1.0
     }
 }
