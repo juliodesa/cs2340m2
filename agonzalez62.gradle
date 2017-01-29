@@ -8,6 +8,8 @@ task testHello {
 }
 
 task compileJava {
+    classpath = './M2/src/main/java/edu/gatech/oad/antlab/person'
+    destinationDir = './M2/lib'
     doLast {
         println "compiling and building project..."
     }
