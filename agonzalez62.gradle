@@ -1,4 +1,5 @@
 defaultTasks 'jar'
+apply plugin: 'java'
 
 task testHello {
     doLast {
