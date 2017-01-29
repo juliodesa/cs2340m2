@@ -1,4 +1,4 @@
 Armando Gonzalez
 
-armando.gonzalez97@gmail.com
+agonzalez62
 armandogonz14@gatech.edu
