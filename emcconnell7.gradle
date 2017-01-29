@@ -1,27 +1,38 @@
 defaultTasks 'jar'
 apply plugin: 'java'
 
-
-task compileTest {
+task testHello {
     doLast {
-        println "compiling unit tests for this project"
+        println "hello! this build file is working"
     }
 }
 
 compileJava {
     doLast {
-        println "compiling and building project"
+        println "compiling and building project..."
+    }
+}
+
+task compileTest {
+    doLast {
+        println "compiling unit tests..."
     }
 }
 
 javadoc {
     doLast {
-        println "creating html documentation for this project"
+        println "creating html documentation for this project..."
     }
 }
 
 clean {
     doLast {
-        println "removes all files created by this project"
+        println "removing extra/unneeded files..."
+    }
+}
+
+jar {
+    doLast {
+        println "creating executable jar for project..."
     }
 }
