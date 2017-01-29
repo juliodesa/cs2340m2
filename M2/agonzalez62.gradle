@@ -1,5 +1,11 @@
 defaultTasks 'jar'
 
+task testHello {
+    doLast {
+      println "hello! this build file is working"
+    }
+}
+
 task compileJava {
     doLast {
         println "compiling and building project..."
