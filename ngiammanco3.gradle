@@ -1,18 +1,13 @@
-apply plugin: 'java'
-apply plugin: 'application'
-
-sourceCompatibility = 1.8
-version = '1.0'
-
 defaultTasks 'jar'
+apply plugin: 'java'
 
 task testHello {
     doLast {
-      println "hello! this build file is working"
+        println "hello! this build file is working"
     }
 }
 
-task compileJava {
+compileJava {
     doLast {
         println "compiling and building project..."
     }
@@ -24,21 +19,20 @@ task compileTest {
     }
 }
 
-task javadoc {
+javadoc {
     doLast {
         println "creating html documentation for this project..."
     }
 }
 
-task clean {
+clean {
     doLast {
         println "removing extra/unneeded files..."
     }
 }
 
-task jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart',
-                   'Implementation-Version': 1.0
+jar {
+    doLast {
+        println "creating executable jar for project..."
     }
 }
