@@ -1,0 +1,40 @@
+defaultTasks 'jar'
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+task compileTest {
+    doLast {
+        println "compiling unit tests for this project"
+    }
+}
+
+task compileJava {
+    doLAst {
+        println "compiling and building project"
+    }
+}
+
+task javadoc {
+    doLast {
+        println "creating html documentation for this project"
+    }
+}
+
+task clean {
+    doLast {
+        println "removes all files created by this project"
+    }
+}
+
+task jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                'Implementation-Version': 1.0
+    }
+}
