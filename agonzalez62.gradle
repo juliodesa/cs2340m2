@@ -3,13 +3,11 @@ apply plugin: 'java'
 
 task testHello {
     doLast {
-      println "hello! this build file is working"
+        println "hello! this build file is working"
     }
 }
 
-task compileJava {
-    classpath = './M2/src/main/java/edu/gatech/oad/antlab/person'
-    destinationDir = './M2/lib'
+compileJava {
     doLast {
         println "compiling and building project..."
     }
@@ -21,19 +19,19 @@ task compileTest {
     }
 }
 
-task javadoc {
+javadoc {
     doLast {
         println "creating html documentation for this project..."
     }
 }
 
-task clean {
+clean {
     doLast {
         println "removing extra/unneeded files..."
     }
 }
 
-task jar {
+jar {
     doLast {
         println "creating executable jar for project..."
     }
