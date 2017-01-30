@@ -5,38 +5,38 @@ defaultTasks 'compileJava', 'compileTestJava', 'javadoc', 'clean', 'jar'
 
 compileJava {
     doLast {
-        println "Compiling"
+        println "compiling and building project..."
     }
 }
 
 compileTestJava {
     doLast {
-        println "Testing"
+        println "compiling unit tests..."
     }
 }
 
 javadoc {
     doLast {
-        println "Creating javadoc"
+        println "creating html documentation for this project..."
     }
 }
 
 clean {
     doLast {
-        println "Cleaning all files"
+        println "removing extra/unneeded files..."
     }
 }
 
 jar {
-    baseName = 'jsa9'
+    baseName = 'sbills3'
     version =  '0.1'
     manifest {
-     attributes  'Implementation-Title' : 'M2 jsa9' ,
+     attributes  'Implementation-Title' : 'M2 sbills3' ,
                  'Implementation-Version' : version,
                  'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
     }
     doLast {
-        println "Creating jar file"
+        println "creating executable jar for project..."
     }
 }
 repositories {
