@@ -1,0 +1,49 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+defaultTasks 'compileJava', 'compileTestJava', 'javadoc', 'clean', 'jar'
+
+compileJava {
+    doLast {
+        println "Compiling"
+    }
+}
+
+compileTestJava {
+    doLast {
+        println "Testing"
+    }
+}
+
+javadoc {
+    doLast {
+        println "Creating javadoc"
+    }
+}
+
+clean {
+    doLast {
+        println "Cleaning all files"
+    }
+}
+
+jar {
+    baseName = 'jsa9'
+    version =  '0.1'
+	manifest {
+     attributes  'Implementation-Title' : 'M2 jsa9' ,
+                 'Implementation-Version' : version,
+                 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+    }
+	doLast {
+        println "Creating jar file"
+    }
+}
+repositories {
+   flatDir {
+       dirs 'lib'
+   }
+}
+dependencies {
+	compile name: 'resources'
+}
