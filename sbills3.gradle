@@ -1,38 +1,49 @@
-defaultTasks 'jar'
 apply plugin: 'java'
+apply plugin: 'application'
 
-task testHello {
-    doLast {
-        println "hello! this build file is working"
-    }
-}
+defaultTasks 'compileJava', 'compileTestJava', 'javadoc', 'clean', 'jar'
 
 compileJava {
     doLast {
-        println "compiling and building project..."
+        println "Compiling"
     }
 }
 
-task compileTest {
+compileTestJava {
     doLast {
-        println "compiling unit tests..."
+        println "Testing"
     }
 }
 
 javadoc {
     doLast {
-        println "creating html documentation for this project..."
+        println "Creating javadoc"
     }
 }
 
 clean {
     doLast {
-        println "removing extra/unneeded files..."
+        println "Cleaning all files"
     }
 }
 
 jar {
-    doLast {
-        println "creating executable jar for project..."
+    baseName = 'jsa9'
+    version =  '0.1'
+    manifest {
+     attributes  'Implementation-Title' : 'M2 jsa9' ,
+                 'Implementation-Version' : version,
+                 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
     }
+    doLast {
+        println "Creating jar file"
+    }
+}
+repositories {
+   flatDir {
+       dirs 'lib'
+   }
+}
+dependencies {
+    compile name: 'resources'
 }
