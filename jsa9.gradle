@@ -3,8 +3,6 @@ apply plugin: 'application'
 
 defaultTasks 'compileJava', 'compileTestJava', 'javadoc', 'clean', 'jar'
 
-mainClassName='edu.gatech.oad.antlab.pkg1.AntLabMain'
-
 compileJava {
     doFirst {
         println "Compiling"
@@ -34,13 +32,13 @@ jar {
     version =  '0.0.1'
 	destinationDir = file(".")
 	manifest {
-     attributes  'Implementation-Title' : 'M2 jsa9' ,
-                 'Implementation-Version' : version,
-                 'Main-Class' : mainClassName,
-				 'Class-Path' : '../../lib/resources.jar'
-    }
-	doFirst {
-        println "Creating jar file"
+		attributes  'Implementation-Title' : 'M2 jsa9',
+        'Implementation-Version' : version,
+        'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+		'Class-Path' : 'lib/resources.jar'
+		}
+		doFirst {
+			println "Creating jar file"
     }
 }
 dependencies {
